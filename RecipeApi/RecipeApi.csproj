@@ -4,9 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationInsightsResourceId>/subscriptions/04fcd100-c9cb-4b75-aef2-49a7315f06ca/resourceGroups/rg-asias-kitchen/providers/microsoft.insights/components/app-recipemanager-api</ApplicationInsightsResourceId>
+    <UserSecretsId>29fb0297-e28f-42cd-8da8-36e3af2f848d</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">

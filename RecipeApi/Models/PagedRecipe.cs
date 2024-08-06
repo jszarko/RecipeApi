@@ -4,8 +4,8 @@ namespace RecipeApi.Models
 {
 	public class PagedRecipe : IRecipe
 	{
-		public long Id { get; set; }
-		public long? Category { get; set; }
+		public int Id { get; set; }
+		public int? Category { get; set; }
 		public string? Name { get; set; }
 		public string? Image { get; set; }
 		public string? Description { get; set; }

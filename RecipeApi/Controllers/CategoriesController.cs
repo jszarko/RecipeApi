@@ -26,7 +26,7 @@ namespace RecipeApi.Controllers
 
 		// GET: api/Categories/5
 		[HttpGet("{id}")]
-		public async Task<ActionResult<Category>> GetCategories(long id)
+		public async Task<ActionResult<Category>> GetCategories(int id)
 		{
 			var category = await _context.Categories.FindAsync(id);
 

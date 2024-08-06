@@ -15,7 +15,7 @@ namespace RecipeApi.Services
 			_recipeContext = recipeContext;
 		}
 
-		public async Task<IEnumerable<PagedRecipe>> SearchRecipesByText(string searchText, long? categoryId, int pageNumber, int recordsPerPage)
+		public async Task<IEnumerable<PagedRecipe>> SearchRecipesByText(string searchText, int? categoryId, int pageNumber, int recordsPerPage)
 		{
 			var searchParam = new SqlParameter("@searchText", SqlDbType.NVarChar).Value = searchText;
 			var categoryIdParam = categoryId is null ? DBNull.Value : new SqlParameter("@categoryId", SqlDbType.BigInt).Value = categoryId;
@@ -35,7 +35,7 @@ namespace RecipeApi.Services
 			return top5Results;
 		}
 
-		public async Task<IEnumerable<Recipe>> GetRecipesByCategory(long categoryId)
+		public async Task<IEnumerable<Recipe>> GetRecipesByCategory(int categoryId)
 		{
 			var results = await _recipeContext.Recipes
 				.Where(r => r.Category == categoryId)

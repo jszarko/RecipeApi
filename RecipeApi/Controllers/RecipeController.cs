@@ -35,7 +35,7 @@ namespace RecipeApi.Controllers
 
 		// GET: api/Recipe/5
 		[HttpGet("{id}")]	
-		public async Task<ActionResult<Recipe>> GetRecipes(long id)
+		public async Task<ActionResult<Recipe>> GetRecipes(int id)
 		{
 			var recipe = await _context.Recipes.FindAsync(id);
 
@@ -65,7 +65,7 @@ namespace RecipeApi.Controllers
 		// GET: api/Recipe/category?category=18
 		[HttpGet]
 		[Route("category")]
-		public async Task<ActionResult<Recipe>> GetRecipesByCategory([FromQuery] long category)
+		public async Task<ActionResult<Recipe>> GetRecipesByCategory([FromQuery] int category)
 		{
 			var recipes = await _recipeService.GetRecipesByCategory(category);
 
@@ -80,7 +80,7 @@ namespace RecipeApi.Controllers
 		// PUT: api/Recipe/5
 		// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkId=2123754
 		[HttpPut("{id}")]
-		public async Task<IActionResult> PutRecipe(long id, Recipe recipe)
+		public async Task<IActionResult> PutRecipe(int id, Recipe recipe)
 		{
 			if (id != recipe.Id)
 			{
@@ -126,7 +126,7 @@ namespace RecipeApi.Controllers
 
 		// DELETE: api/Recipe/5
 		[HttpDelete("{Id}")]
-		public async Task<IActionResult> DeleteRecipe(long id)
+		public async Task<IActionResult> DeleteRecipe(int id)
 		{
 			var recipe = await _context.Recipes.FindAsync(id);
 			if (recipe == null)
@@ -140,7 +140,7 @@ namespace RecipeApi.Controllers
 			return NoContent();
 		}
 
-		private bool RecipeExists(long id)
+		private bool RecipeExists(int id)
 		{
 			return _context.Recipes.Any(e => e.Id == id);
 		}
