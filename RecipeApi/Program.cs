@@ -15,7 +15,8 @@ builder.Services.AddCors(options =>
 		{
 			policy.WithOrigins(
 				"http://localhost:3000",
-				"https://localhost:3000")
+				"https://localhost:3000",
+				"https://lively-moss-07102c00f.5.azurestaticapps.net/")
 					.AllowAnyHeader()
 					.AllowAnyMethod();
 		});
@@ -38,11 +39,11 @@ builder.Services.AddApplicationInsightsTelemetry(new Microsoft.ApplicationInsigh
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
+if (app.Environment.IsDevelopment())
+{
 	app.UseSwagger();
 	app.UseSwaggerUI();
-//}
+}
 
 app.UseHttpsRedirection();
 app.UseCors(CorsWhitelistPolicy);

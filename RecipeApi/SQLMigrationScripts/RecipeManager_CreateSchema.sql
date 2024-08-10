@@ -1,7 +1,7 @@
 use [recipe_manager]
 go
 
-CREATE TABLE [recipes] (
+CREATE TABLE [dbo].[recipes] (
     [id] int identity(1, 1) NOT NULL,
     -- [category] nvarchar(15) NULL,
 	[category] int NULL,
@@ -16,7 +16,7 @@ CREATE TABLE [recipes] (
 );
 go
 
-CREATE TABLE [categories] (
+CREATE TABLE [dbo].[categories] (
     [id] int identity(1, 1) NOT NULL,    
     [name] nvarchar(128) NULL,	
 	[image] nvarchar(1024) NULL,
