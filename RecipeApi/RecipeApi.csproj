@@ -24,4 +24,10 @@
     <Folder Include="SQLMigrationScripts\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="robots.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
